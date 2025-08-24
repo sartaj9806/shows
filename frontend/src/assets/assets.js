@@ -17,6 +17,7 @@ export const movieDetails = [
         genre: ['Action', 'Adventure', 'Sci-Fi', 'Superhero'],
         language: ['English', 'Hindi'],
         price: 499,
+        trailer: 'https://www.youtube.com/embed/18QQWa5MEcs?si=VsTUWj4uQY__x9Dm',
     },
     {
         hero: housefull5hero,
@@ -29,6 +30,7 @@ export const movieDetails = [
         genre: ['Comedy', 'Mystery', 'Thriller'],
         language: ['Hindi'],
         price: 499,
+        trailer: 'https://www.youtube.com/embed/xGQuT1wm2qk?si=MiJg6Dl5c0rFBDe4',
     },
     {
         hero: zootopiahero,
@@ -41,5 +43,6 @@ export const movieDetails = [
         genre: ['Action', 'Adventure', 'Crime'],
         language: ['English', 'Hindi'],
         price: 499,
+        trailer: 'https://www.youtube.com/embed/BjkIOU5PhyQ?si=B7lc9Pk8hLizYkl3',
     }
 ]

@@ -5,7 +5,7 @@ import Home from './pages/Home'
 
 const App = () => {
   return (
-    <div className='' >
+    <div className='bg-linear-to-br from-[#101828] to-[#364153]' >
 
       <Navbar />
 
