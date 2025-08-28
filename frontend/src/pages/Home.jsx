@@ -1,13 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, use } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { movieDetails } from '../assets/assets';
 import { minuteToHours } from '../lib/minuteToHours';
 import Trailer from '../components/Trailer';
+import Card from '../components/Card';
+import NowShowing from '../components/NowShowing';
+import { ISOToDateFormate } from '../lib/ISOToDateFormate';
 
 const Home = () => {
+    const [movies, setMovies] = useState(movieDetails)
     const [movie, setMovie] = useState(movieDetails[0]);
     const [selectedMovieTrailer, setSelectedMovieTrailer] = useState(movieDetails[0].trailer);
-    const [movieAllTrailers, setMovieAllTrailers] = useState(movieDetails.map(movie => movie.trailer));
+    const [movieAllTrailers, setMovieAllTrailers] = useState(movieDetails.slice(0, 3).map(movie => movie.trailer));
     const indexRef = useRef(0);
 
     useEffect(() => {
@@ -21,6 +25,7 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
+        // console.log('All Movie : ', movies)
         // console.log('Current movie: ', movie)
         // console.log('Movie All trailers: ', movieAllTrailers)
     }, [movie])
@@ -58,7 +63,7 @@ const Home = () => {
                             <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">{movie.title}</h1>
                             <p className="text-sm sm:text-base md:text-lg leading-6 mb-4">{movie.description}</p>
                             <p className="text-sm sm:text-base md:text-lg mb-4">
-                                {`${minuteToHours(movie.duration)} • ${movie.rating} • ${movie.release}`}
+                                {`${minuteToHours(movie.duration)} • ${movie.rating} • ${ISOToDateFormate(movie.release_date)}`}
                             </p>
 
                             {/* Language */}
@@ -77,7 +82,7 @@ const Home = () => {
                             {/* Genre */}
                             <p className="mb-4 flex flex-wrap justify-center md:justify-start">
                                 Genre:&nbsp;
-                                {movie.genre.map((genre, index) => (
+                                {movie.genres.map((genre, index) => (
                                     <span
                                         key={index}
                                         className="text-white bg-yellow-500 font-medium rounded-lg px-3 py-[2px] mr-2 mb-2"
@@ -129,6 +134,8 @@ const Home = () => {
             <Trailer props={{ selectedMovieTrailer, setSelectedMovieTrailer, movieAllTrailers }} />
 
 
+            {/* Now Showing Section */}
+            <NowShowing movies={movies} />
 
 
         </motion.div >
