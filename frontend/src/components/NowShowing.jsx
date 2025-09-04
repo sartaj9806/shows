@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card from './Card'
 import { motion } from 'framer-motion'
+import { AppContext } from '../context/AppContext'
 
-const NowShowing = ({ movies }) => {
+const NowShowing = () => {
 
-    // const 
-
-    console.log('Movie in NowShowing : ', movies)
+    const { movies } = useContext(AppContext)
 
     return (
         <motion.div
@@ -29,9 +28,9 @@ const NowShowing = ({ movies }) => {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
-                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 w-full max-w-7xl mb-16' >
+                    <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mb-16' >
                         {
-                            movies.slice(0, 4).map((movie, index) => (
+                            movies.slice(0, 3).map((movie, index) => (
                                 <Card key={index} movie={movie} />
                             ))
                         }

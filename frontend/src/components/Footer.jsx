@@ -37,10 +37,6 @@ const Footer = () => {
                             <Link className='text-xl transition-all duration-300 ease-in hover:scale-105' to='https://github.com/sartaj9806' target='_blank' rel='noopener noreferrer' ><FaGithub color='white' /></Link>
 
                             <Link className='text-xl transition-all duration-300 ease-in hover:scale-105' to='https://a1sartaj.in' target='_blank' rel='noopener noreferrer' ><FaChrome color='white' /></Link>
-
-
-
-
                         </div>
                     </div>
 
@@ -65,10 +61,10 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Footer section lower part */}
 
             </div>
 
+                {/* Footer section lower part */}
             <div className='py-2 text-center  text-sm text-black bg-[#F0B100] w-full' >
                 Copyright 2025 © a1Sartaj.in. All Right Reserved.
             </div>

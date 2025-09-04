@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { motion } from 'framer-motion';
+import { AppContext } from '../context/AppContext';
 
-const Trailer = ({ props }) => {
-    const { selectedMovieTrailer, setSelectedMovieTrailer, movieAllTrailers } = props;
+const Trailer = () => {
+    const { movieAllTrailers, selectedMovieTrailer, setSelectedMovieTrailer } = useContext(AppContext);
+
+    
 
     return (
         <motion.div

@@ -6,7 +6,7 @@ const Card = ({ movie }) => {
     const navigate = useNavigate();
 
     return (
-        <div className='border rounded-lg p-3 flex flex-col justify-between max-h-[450px]'>
+        <div className='border rounded-lg p-3 flex flex-col justify-between min-h-fit'>
 
             {/* Top Section: Image + Info */}
             <div>
@@ -32,16 +32,21 @@ const Card = ({ movie }) => {
                 </p>
             </div>
 
-            {/* Bottom Section: Book Now Button */}
-            <button
-                onClick={() => {
-                    navigate(`/movie/${movie._id}`);
-                    scroll(0, 0);
-                }}
-                className="mt-4 bg-[#FF0000] text-white px-5 sm:px-6 py-2 rounded-lg font-semibold hover:bg-red-900 transition-all duration-200 ease-in cursor-pointer hover:translate-x-1"
-            >
-                Book Now
-            </button>
+            {/* Card Bottom Section */}
+            <div className='flex items-center justify-between mt-4' >
+                {/* Book Now Button */}
+                <button
+                    onClick={() => {
+                        navigate(`/movie/${movie._id}`);
+                        scroll(0, 0);
+                    }}
+                    className="bg-[#FF0000] text-white  text-sm p-2 rounded-lg font-semibold hover:bg-red-900 transition-all duration-200 ease-in cursor-pointer hover:translate-x-1"
+                >
+                    Book Now
+                </button>
+
+                <p className='text-lg text-[fff]' >₹ {movie.price}.00</p>
+            </div>
         </div>
     )
 }
