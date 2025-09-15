@@ -3,7 +3,7 @@ import { minuteToHours } from '../lib/minuteToHours'
 import { useNavigate } from 'react-router-dom'
 
 const Card = ({ movie }) => {
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
 
     return (
         <div className='border rounded-lg p-3 flex flex-col justify-between min-h-fit'>
@@ -14,7 +14,7 @@ const Card = ({ movie }) => {
                 <div className='overflow-hidden rounded-lg'>
                     <img
                         onClick={() => {
-                            navigate(`/movie/${movie._id}`);
+                            Navigate(`/movie/${movie._id}`);
                             scroll(0, 0);
                         }}
                         className='w-full aspect-square object-cover object-center rounded-lg cursor-pointer transition-all duration-300 ease-in hover:scale-110'

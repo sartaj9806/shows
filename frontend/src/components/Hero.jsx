@@ -97,7 +97,7 @@ const Hero = () => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: '-100%', opacity: 0 }}
                     transition={{ duration: 0.8, ease: 'easeInOut' }}
-                    className="w-3/4 sm:w-3/5 md:max-w-sm relative overflow-hidden rounded-lg shadow-lg group"
+                    className="w-3/4 sm:w-3/5 md:max-w-sm relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"
                 >
                     <img
                         onClick={() => setSelectedMovieTrailer(movieForHero.trailer)}

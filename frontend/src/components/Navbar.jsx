@@ -19,7 +19,7 @@ const Navbar = () => {
                 <nav className='md:flex hidden gap-4 bg-[#d9d9d983] px-4 py-1 rounded-full text-lg font-medium ' >
                     <NavLink className='hover:-translate-y-0.5 transition-all duration-200 ease-in px-2 py-1 rounded-lg  ' to='/'>Home</NavLink>
                     <NavLink className='hover:-translate-y-0.5 transition-all duration-200 ease-in px-2 py-1 rounded-lg  ' to='/movies'>Movies</NavLink>
-                    <NavLink className='hover:-translate-y-0.5 transition-all duration-200 ease-in px-2 py-1 rounded-lg  ' to='/theaters'>Theaters</NavLink>
+                    <NavLink className='hover:-translate-y-0.5 transition-all duration-200 ease-in px-2 py-1 rounded-lg  ' to='/movies'>Theaters</NavLink>
                     <NavLink className='hover:-translate-y-0.5 transition-all duration-200 ease-in px-2 py-1 rounded-lg  ' to='/bookings'>My Bookings</NavLink>
                 </nav>
 
