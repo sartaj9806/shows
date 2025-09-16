@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Footer from './components/Footer'
 import Movies from './pages/Movies'
 import MovieDetails from './pages/MovieDetails'
+import SelectSeat from './pages/SelectSeat'
+import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/clerk-react'
 
 const App = () => {
   return (
@@ -16,6 +18,16 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/movies' element={<Movies />} />
         <Route path='/movie/:id' element={<MovieDetails />} />
+        <Route path='/select-seat' element={
+          <>
+            <SignedIn>
+              <SelectSeat />
+            </SignedIn>
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+          </>
+        } />
       </Routes>
 
       <Footer />

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
 import { moviesCasting } from '../assets/assets';
 import Card from '../components/Card';
@@ -8,6 +8,8 @@ import { motion } from 'framer-motion';
 const MovieDetails = () => {
 
     const { id } = useParams();
+
+    const navigate = useNavigate();
 
     const { movies } = useContext(AppContext)
     const [movie, setMovie] = useState({})
@@ -82,7 +84,7 @@ const MovieDetails = () => {
                         </Link>
 
                         <button
-                            onClick={() => alert('Hello')}
+                            onClick={() => navigate('/select-seat')}
                             className="bg-[#FF0000] text-white px-5 sm:px-6 py-2 rounded-lg font-semibold hover:bg-red-900 transition-all duration-200 ease-in cursor-pointer hover:translate-x-1"
                         >
                             Book Now

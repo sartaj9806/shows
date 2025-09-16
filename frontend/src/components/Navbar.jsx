@@ -3,6 +3,7 @@ import { NavLink, useSearchParams } from 'react-router-dom'
 import { FaUserCircle } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
+import { SignedIn, SignedOut, SignInButton, SignUp, UserButton } from '@clerk/clerk-react';
 
 
 const Navbar = () => {
@@ -25,12 +26,21 @@ const Navbar = () => {
 
                 <div className='flex items-center gap-2'>
                     <div className='text-2xl md:text-3xl'>
-                        <FaUserCircle />
+                        <SignedOut>
+                            <SignInButton>
+                                <FaUserCircle className='hover:-translate-y-0.5 transition-all duration-200 ease-in cursor-pointer' />
+                            </SignInButton>
+                        </SignedOut>
+
+                        <SignedIn>
+                            <UserButton />
+                        </SignedIn>
+                    
                     </div>
 
                     <div onClick={() => setIsOpen(!isOpen)} className='md:hidden text-2xl transition-all duration-200 ease-in cursor-pointer hover:scale-110'>
 
-                        { 
+                        {
                             isOpen ? <IoMdClose /> : <FaBars />
                         }
 
