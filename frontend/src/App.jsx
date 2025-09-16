@@ -7,6 +7,8 @@ import Movies from './pages/Movies'
 import MovieDetails from './pages/MovieDetails'
 import SelectSeat from './pages/SelectSeat'
 import { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/clerk-react'
+import ProtectedPage from './auth/PrivateRoute'
+import PrivateRoute from './auth/PrivateRoute'
 
 const App = () => {
   return (
@@ -19,14 +21,9 @@ const App = () => {
         <Route path='/movies' element={<Movies />} />
         <Route path='/movie/:id' element={<MovieDetails />} />
         <Route path='/select-seat' element={
-          <>
-            <SignedIn>
-              <SelectSeat />
-            </SignedIn>
-            <SignedOut>
-              <RedirectToSignIn />
-            </SignedOut>
-          </>
+          <PrivateRoute>
+            <SelectSeat />
+          </PrivateRoute>
         } />
       </Routes>
 
