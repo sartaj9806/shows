@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { movieDetails, moviesGenre } from "../assets/assets";
+import { movieDetails, moviesGenre, movieShows } from "../assets/assets";
 
 
 export const AppContext = createContext()
@@ -11,6 +11,7 @@ const AppProvider = ({ children }) => {
     const [selectedMovieTrailer, setSelectedMovieTrailer] = useState(movies[0].trailer) // This is for trailer trailer 0 always set default
     const [movieAllTrailers, setMovieAllTrailers] = useState(movies.slice(0, 3).map(movie => movie.trailer)) // This is all trailers
     const [genres, setGenres] = useState(moviesGenre) // This is list for movie genres
+    const [movieShowsTime, setMovieShowsTime] = useState(movieShows) // This is list for movie shows time
 
     useEffect(() => {
         // console.log('Movie Details : ', movieDetails)
@@ -23,6 +24,8 @@ const AppProvider = ({ children }) => {
         selectedMovieTrailer, setSelectedMovieTrailer,
         movieAllTrailers, setMovieAllTrailers,
         genres, setGenres,
+        movieShowsTime, setMovieShowsTime,
+        
     }
 
 

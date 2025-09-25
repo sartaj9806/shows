@@ -2,10 +2,13 @@ import React, { useContext } from 'react'
 import Card from './Card'
 import { motion } from 'framer-motion'
 import { AppContext } from '../context/AppContext'
+import { useNavigate } from 'react-router-dom'
 
 const NowShowing = () => {
 
     const { movies } = useContext(AppContext)
+
+    const navigate = useNavigate()
 
     return (
         <motion.div
@@ -38,7 +41,7 @@ const NowShowing = () => {
                 </motion.div>
 
                 <button
-                    onClick={() => alert(`Show more section is comming soon`)}
+                    onClick={() => navigate('/movies') }
                     className="bg-[#FF0000] text-white px-5 sm:px-6 py-2 rounded-lg font-semibold hover:bg-red-900 transition-all duration-200 ease-in cursor-pointer hover:translate-x-1"
                 >
                     Show More

@@ -288,9 +288,6 @@ export const movieDetails = [
     }
 ];
 
-
-
-
 export const moviesGenre = [
     { _id: 1, name: "Action" },
     { _id: 2, name: "Adventure" },
@@ -330,5 +327,52 @@ export const moviesCasting = [
 ]
 
 
+export const movieShows = [
+    {
+        id: 1,
+        movieId: 1,
+        date: "2025-09-20",
+        time: [
+            { time: '2025-09-20T10:00:00Z' },
+            { time: '2025-09-20T14:00:00Z' },
+            { time: '2025-09-20T18:00:00Z' },
+            { time: '2025-09-20T22:00:00Z' },
+        ]
+
+    },
+    {
+        id: 2,
+        movieId: 1,
+        date: "2025-09-21",
+        time: [
+            { time: '2025-09-21T12:00:00Z' },
+            { time: '2025-09-21T14:00:00Z' },
+            { time: '2025-09-21T20:00:00Z' },
+            { time: '2025-09-21T00:00:00Z' },
+        ]
+    },
+    {
+        id: 3,
+        movieId: 2,
+        date: "2025-09-22",
+        time: [
+            { time: '2025-09-22T11:00:00Z' },
+            { time: '2025-09-22T13:00:00Z' },
+            { time: '2025-09-22T19:00:00Z' },
+            { time: '2025-09-22T23:00:00Z' },
+        ]
+    },
+    {
+        id: 4,
+        movieId: 2,
+        date: "2025-09-23",
+        time: [
+            { time: '2025-09-23T13:00:00Z' },
+            { time: '2025-09-23T15:00:00Z' },
+            { time: '2025-09-23T21:00:00Z' },
+            { time: '2025-09-23T01:00:00Z' },
+        ]
+    },
+];
 
 

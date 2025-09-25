@@ -3,11 +3,13 @@ import { AppContext } from '../context/AppContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { minuteToHours } from '../lib/minuteToHours';
 import { ISOToDateFormate } from '../lib/ISOToDateFormate';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
 
     const { movieForHero, setMovieForHero, movies, setSelectedMovieTrailer, } = useContext(AppContext)
 
+    const navigate = useNavigate();
 
     const indexRef = useRef(0);
 
@@ -82,7 +84,7 @@ const Hero = () => {
                         <p className="text-xl sm:text-2xl font mt-4 mb-4">Price: ₹{movieForHero.price}</p>
 
                         <button
-                            onClick={() => alert('Hello')}
+                            onClick={() => navigate(`/movie/${movieForHero._id}`)}
                             className="bg-[#FF0000] text-white px-5 sm:px-6 py-2 rounded-lg font-semibold hover:bg-red-900 transition-all duration-200 ease-in cursor-pointer hover:translate-x-1"
                         >
                             Book Now
